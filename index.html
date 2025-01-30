@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://gsports.gitam.edu/assets/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://gsports.gitam.edu/assets/font-awesome/css/font-awesome.min.css">
+    <title>Gym Reservation</title>
+    <style>
+        body {
+            font-size: 18px;
+            font-family: 'Arial';
+            background: #e7e7e7;
+        }
+        #print-table {
+            margin: 0 auto;
+            width: 800px;
+            background: #fff;
+            padding: 20px;
+        }
+        table {
+            margin: 0 auto;
+            width: 100%;
+        }
+        table th {
+            font-weight: bold;
+            text-align: left;
+            width: 25%;
+        }
+        table td {
+            width: 75%;
+        }
+        .user-img {
+            width: 50px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="print-table">
+        <div class="card" style="width:600px !important; margin:0 auto;">
+            <div class="logo text-center">
+                <img src="https://cdn.gitam.edu/images/logo/gitam-new-logo.png" class="gitam-logo-1" height="50">
+                <h3>Reservation Information</h3>
+            </div>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>Stadium</th>
+                        <td>Fitness & Performance Centre</td>
+                    </tr>
+                    <tr>
+                        <th>Playground</th>
+                        <td>Fitness & Performance Centre</td>
+                    </tr>
+                    <tr>
+                        <th>Court</th>
+                        <td>Room 1</td>
+                    </tr>
+                    <tr>
+                        <th>Applicant Name</th>
+                        <td>
+                            <img src="https://doeresults.gitam.edu/photo/img.aspx?id=VU21CSEN050030" class="user-img"> MACHA DEEPAK DAS
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Applicant Department</th>
+                        <td>CSE</td>
+                    </tr>
+                    <tr>
+                        <th>Applicant Campus</th>
+                        <td>GIT, Visakhapatnam</td>
+                    </tr>
+                    <tr>
+                        <th>Applicant Mobile</th>
+                        <td>8919360778</td>
+                    </tr>
+                    <tr>
+                        <th>Applicant E-mail</th>
+                        <td>dmacha@gitam.in</td>
+                    </tr>
+                    <tr>
+                        <th>Booking Date</th>
+                        <td>
+                            <input type="date" id="booking-date" class="input-field">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Booking Slot</th>
+                        <td>
+                            <input type="time" id="start-time" class="input-field"> to 
+                            <input type="time" id="end-time" class="input-field">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Registration Fee</th>
+                        <td>FREE</td>
+                    </tr>
+                    <tr>
+                        <th>Reference Number</th>
+                        <td id="refno"></td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td><b>Approved</b></td>
+                    </tr>
+                    <tr>
+                        <th>Remarks</th>
+                        <td><b>Approved</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        function updateReferenceNumber() {
+            let today = new Date();
+            let year = today.getFullYear();
+            let month = ("0" + (today.getMonth() + 1)).slice(-2);
+            let day = ("0" + today.getDate()).slice(-2);
+            document.getElementById("refno").innerText = `${year}${month}${day}4370203`;
+        }
+        updateReferenceNumber();
+    </script>
+</body>
+</html>
