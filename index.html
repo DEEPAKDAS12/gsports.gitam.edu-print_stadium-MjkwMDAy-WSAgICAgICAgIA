@@ -6,40 +6,66 @@
     <link href="https://gsports.gitam.edu/assets/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="https://gsports.gitam.edu/assets/font-awesome/css/font-awesome.min.css">
 
-    <title></title>
+    <title>Reservation Details</title>
     <style type="text/css">
         body {
             font-size: 18px;
             font-family: 'Arial';
             background: #e7e7e7;
+            text-align: center;
         }
 
         #print-table {
             margin: 0 auto;
-            width: 800px;
+            width: 600px;
             background: #fff;
             padding: 20px;
+            border-radius: 8px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .reservation-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: center;
         }
 
         table {
-            margin: 0 auto;
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
         }
 
         table th {
             font-weight: bold;
             text-align: left;
-            width: 25%;
+            width: 40%;
+            padding: 8px;
+            background: #f2f2f2;
         }
 
         table td {
-            width: 75%;
+            width: 60%;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
         }
 
         .user-img {
-            width: 50px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 10px;
         }
 
-        /* Added Styles */
         .booking-date {
             font-weight: bold;
             color: black;
@@ -47,7 +73,7 @@
 
         .booking-slot {
             color: green;
-            font-weight: normal;
+            font-weight: bold;
         }
 
         .status-approved {
@@ -60,101 +86,75 @@
 <body>
 
     <div id="print-table">
-        <div class="card" style="width:600px !important; margin:0 auto;" id="print-pdf">
-            <div class="logo text-center">
-                <img src="https://cdn.gitam.edu/images/logo/gitam-new-logo.png" class="gitam-logo-1" height="50">
-                <h3>Reservation Information</h3>
-            </div>
-            <table class="m17 jb jb1 table table-bordered" style="width:100% !important">
-                <tbody>
-                    <tr>
-                        <th>Stadium</th>
-                        <td>Fitness &amp; Performance Centre</td>
-                    </tr>
-                    <tr>
-                        <th>Playground</th>
-                        <td>Fitness &amp; Performance Centre</td>
-                    </tr>
-                    <tr>
-                        <th>Court</th>
-                        <td>Room 1</td>
-                    </tr>
-                    <tr>
-                        <th>Applicant Name</th>
-                        <td>
-                            <img src="https://doeresults.gitam.edu/photo/img.aspx?id=VU21CSEN0500030" class="user-img"> 
-                            MACHA DEEPAK DAS
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Applicant Department</th>
-                        <td>CSE</td>
-                    </tr>
-                    <tr>
-                        <th>Applicant Campus</th>
-                        <td>GIT, Visakhapatnam</td>
-                    </tr>
-                    <tr>
-                        <th>Applicant Mobile</th>
-                        <td>8919360778</td>
-                    </tr>
-                    <tr>
-                        <th>Applicant E-mail</th>
-                        <td>dmacha@gitam.in</td>
-                    </tr>
-                    <tr>
-                        <th>Booking Date</th>
-                        <td id="asker" class="booking-date">15-Feb-2025</td>
-                    </tr>
-                    <tr>
-                        <th>Booking Slot</th>
-                        <td class="booking-slot">07:00 AM to 08:00 AM</td>
-                    </tr>
-                    <tr>
-                        <th>Registration Fee</th>
-                        <td>FREE</td>
-                    </tr>
-                    <tr>
-                        <th>Reference Number</th>
-                        <td id="refno">20250215353053</td>
-                    </tr>
-                    <tr>
-                        <th>Status</th>
-                        <td class="status-approved">Approved</td>
-                    </tr>
-                    <tr>
-                        <th>Remarks</th>
-                        <td class="status-approved">Approved</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="logo">
+            <img src="https://cdn.gitam.edu/images/logo/gitam-new-logo.png">
         </div>
-
-        <div style="text-align: center;" id="print-btn">
-            <button class="btn btn-primary" onclick="printpage();" type="button">Download</button>
-        </div>
+        <h3 class="reservation-title">Reservation Information</h3>
+        
+        <table>
+            <tbody>
+                <tr>
+                    <th>Ref. number</th>
+                    <td>20250214721993</td>
+                </tr>
+                <tr>
+                    <th>Stadium</th>
+                    <td>Fitness &amp; Performance Centre</td>
+                </tr>
+                <tr>
+                    <th>Playground</th>
+                    <td>Fitness &amp; Performance Centre</td>
+                </tr>
+                <tr>
+                    <th>Court</th>
+                    <td>Room 1</td>
+                </tr>
+                <tr>
+                    <th>Gym-goer(s) / Player</th>
+                    <td class="user-info">
+                        <img src="https://doeresults.gitam.edu/photo/img.aspx?id=VU21CSEN0500030" class="user-img"> 
+                        MACHA DEEPAK DAS
+                    </td>
+                </tr>
+                <tr>
+                    <th>Department</th>
+                    <td>CSE</td>
+                </tr>
+                <tr>
+                    <th>Campus</th>
+                    <td>GIT, Visakhapatnam</td>
+                </tr>
+                <tr>
+                    <th>Mobile</th>
+                    <td>8919360778</td>
+                </tr>
+                <tr>
+                    <th>E-mail</th>
+                    <td>dmacha@gitam.in</td>
+                </tr>
+                <tr>
+                    <th>Booking Date</th>
+                    <td class="booking-date">14-Feb-2025</td>
+                </tr>
+                <tr>
+                    <th>Booking Slot</th>
+                    <td class="booking-slot">07:00 AM to 08:00 AM</td>
+                </tr>
+                <tr>
+                    <th>Amount</th>
+                    <td>FREE</td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td class="status-approved">Approved</td>
+                </tr>
+                <tr>
+                    <th>Remarks</th>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <br>
 
-    <script type="text/javascript" src="https://gsports.gitam.edu/assets/js/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://gsports.gitam.edu/assets/js/html2canvas.min.js"></script>
-    <script type="text/javascript">
-        function printpage() {
-            document.getElementById("print-btn").style.display = 'none';
-            var fileName = '20250215353053' + ".pdf";
-            html2canvas(document.getElementById('print-pdf'), {
-                onrendered: function(canvas) {
-                    var data = canvas.toDataURL();
-                    var docDefinition = {
-                        content: [{
-                            image: data,
-                            width: 500,
-                        }]
-                    };
-                    pdfMake.createPdf(docDefinition).download(fileName);
-                }
-            });
-        }
-    </script>
 </body>
 </html>
